@@ -1,0 +1,19 @@
+/* Header.css */
+
+.app-header {
+  background-color: #ffffff;
+  padding: 20px 40px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.app-title {
+  font-family: 'Helvetica Neue', 'Segoe UI', sans-serif;
+  font-size: 28px;
+  font-weight: 600;
+  color: #222222;
+  margin: 0;
+  letter-spacing: -0.5px;
+}
