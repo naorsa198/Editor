@@ -1,0 +1,40 @@
+.sidebar {
+  width: 200px;
+  padding: 12px;
+  /* Modern soft gradient background */
+  background: linear-gradient(135deg, #e3f1fd 0%, #f4f4f4 60%, #e0f7fa 100%);
+  border-right: 1px solid #ccc;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  height: 100vh;
+  box-shadow: 2px 0 12px 0 rgba(56,153,236,0.07);
+}
+
+.sidebar-elements {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.sidebar-toolbar-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.sidebar-toolbar-buttons button {
+  background: linear-gradient(90deg, #3899ec 0%, #00c389 100%);
+  color: #fff;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 4px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.sidebar-toolbar-buttons button:hover {
+  background: #15c079;
+}

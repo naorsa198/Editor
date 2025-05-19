@@ -1,13 +1,13 @@
 import { useDraggable } from "@dnd-kit/core";
-import { getDraggedElement } from "./DragOverlayWrapper";
+import { getDraggedElement } from "../components/DragOverlayWrapper/DragOverlayWrapper";
+import './ToolboxItem.css';
 
-
-function ToolboxItem({ id, label, src }: { id: string; label: string, src?: string | null}) {
+function ToolboxItem({ id }: { id: string}) {
     const { attributes, listeners, setNodeRef } = useDraggable({ id });
-    const element = getDraggedElement(id.split('-')[0])
+    const element = getDraggedElement(id.split('-')[0], {id})
 
     return (
-        <div
+        <div className="toolbox-item"
             ref={setNodeRef}
             {...attributes}
             {...listeners}

@@ -1,25 +1,25 @@
 import { useDroppable } from "@dnd-kit/core";
 import { forwardRef } from "react";
+import './CanvasArea.css';
 
-const DropArea = forwardRef<HTMLDivElement, { children: React.ReactNode, onContextMenu?: any }>(
-    ({ children, onContextMenu }, ref) => {
-        const { setNodeRef } = useDroppable({ id: 'dropzone' });
+const DropArea = forwardRef<HTMLDivElement, { children: React.ReactNode, onContextMenu?: React.MouseEventHandler<HTMLDivElement>;
+    onMouseDown?: React.MouseEventHandler<HTMLDivElement>;
+    onMouseMove?: React.MouseEventHandler<HTMLDivElement>;
+    onMouseUp?: React.MouseEventHandler<HTMLDivElement>; }>(
+    ({ children, onContextMenu, onMouseDown, onMouseMove, onMouseUp  }, ref) => {
+        const { setNodeRef } = useDroppable({ id: 'droparea' });
 
         return (
-            <div 
+            <div    
+                className="drop-area"         
                 onContextMenu={onContextMenu}
+                onMouseDown={onMouseDown}
+                onMouseMove={onMouseMove}
+                onMouseUp={onMouseUp}
                 ref={(node) => {
                     setNodeRef(node);
                     if (typeof ref === 'function') ref(node);
                     else if (ref) ref.current = node;
-                }}
-                style={{
-                    position: 'relative',
-                    width: '100%',
-                    height: '400px',
-                    border: '2px dashed #aaa',
-                    background: '#f9f9f9',
-                    overflow: 'hidden',
                 }}
             >
                 {children}

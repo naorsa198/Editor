@@ -1,19 +1,20 @@
-/* Header.css */
-
 .app-header {
-  background-color: #ffffff;
-  padding: 20px 40px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  background: linear-gradient(90deg, #3899ec 0%, #00c389 100%);
+  padding: 24px 0 16px 0;
+  box-shadow: 0 2px 8px rgba(56, 153, 236, 0.10);
+  border-bottom: 2px solid #162d3d;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .app-title {
-  font-family: 'Helvetica Neue', 'Segoe UI', sans-serif;
-  font-size: 28px;
-  font-weight: 600;
-  color: #222222;
+  color: #fff;
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: 2px;
   margin: 0;
-  letter-spacing: -0.5px;
+  text-shadow: 0 2px 8px rgba(56, 153, 236, 0.18);
+  font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
 }

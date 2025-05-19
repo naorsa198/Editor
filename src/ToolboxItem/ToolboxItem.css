@@ -1,0 +1,20 @@
+.toolbox-item {
+  align-self: flex-start;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  margin-bottom: 12px;  
+  font-size: 16px;
+}
+
+.toolbox-item:hover,
+.toolbox-item:focus {
+  background: #e3f1fd;
+  border: 1.5px solid #3899ec;
+  box-shadow: 0 2px 8px rgba(56,153,236,0.10);
+}
+
+.toolbox-item:active {
+  background: #d0eaff;
+  border: 2px solid #3899ec;
+}
