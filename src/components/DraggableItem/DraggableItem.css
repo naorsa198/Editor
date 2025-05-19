@@ -9,7 +9,6 @@
   border-style: dashed;
   border-color: transparent;
   background: white;
-  transition: border 0.18s, box-shadow 0.18s, background 0.18s;
 }
 
 .draggable-item.selected {

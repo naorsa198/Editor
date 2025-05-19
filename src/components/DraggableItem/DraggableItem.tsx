@@ -1,6 +1,8 @@
 import { useDraggable } from "@dnd-kit/core";
-import { getDraggedElement } from "../DragOverlayWrapper/DragOverlayWrapper";
 import { useState } from "react";
+import DraggableTextItem from "./DraggableTextItem";
+import DraggableImageItem from "./DraggableImageItem";
+import DraggableButtonItem from "./DraggableButtonItem";
 import "./DraggableItem.css";
 
 function DraggableItem({
@@ -39,6 +41,33 @@ function DraggableItem({
     if (isFocused) className += " is-focused";
     if (isDragging) className += " dragging";
 
+    let content = null;
+    if (type === "text") {
+        content = (
+            <DraggableTextItem
+                id={id}
+                data={data}
+                onTextChange={onTextChange}
+                onFocus={() => setIsFocused(true)}
+                onBlur={() => setIsFocused(false)}
+            />
+        );
+    } else if (type === "image") {
+        content = (
+            <DraggableImageItem
+                id={id}
+                data={data}
+                onImageChange={onImageChange}
+                onFocus={() => setIsFocused(true)}
+                onBlur={() => setIsFocused(false)}
+            />
+        );
+    } else if (type === "button") {
+        content = <DraggableButtonItem />;
+    } else {
+        content = <div>Unknown type</div>;
+    }
+
     return (
         <div
             ref={setNodeRef}
@@ -59,14 +88,7 @@ function DraggableItem({
                 {...listeners}
                 className="draggable-item-content"
             >
-                {getDraggedElement(type, {
-                    id,
-                    data,
-                    onTextChange,
-                    onImageChange,
-                    onFocus: () => setIsFocused(true),
-                    onBlur: () => setIsFocused(false)
-                })}
+                {content}
             </div>
         </div>
     );

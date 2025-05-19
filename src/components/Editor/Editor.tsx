@@ -268,6 +268,9 @@ export default function Editor() {
 
 
     const handleClearCanvas = () => {
+        if (!dragEnabled) {
+            return;
+        }
         setItemsInCanvas([])
         setMenuPosition(null);
         setMenuType(null);
@@ -377,7 +380,6 @@ export default function Editor() {
                     onToggleDrag={() => setDragEnabled((prev) => !prev)}
                     dragEnabled={dragEnabled}
                     onDownloadJSON={handleDownloadJSON}
-                    // @ts-ignore
                     fileInputRef={fileInputRef}
                     onLoadJSON={handleLoadJSON}
                 />

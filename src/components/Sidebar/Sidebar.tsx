@@ -1,7 +1,7 @@
 // Sidebar.tsx
-import { on } from 'events';
 import ToolboxItem from '../../ToolboxItem/ToolboxItem';
 import './Sidebar.css';
+import { RefObject } from 'react';
 
 export type SidebarProps = {
   items: { id: string, label: string }[];
@@ -11,7 +11,7 @@ export type SidebarProps = {
   onToggleDrag: () => void;
   dragEnabled: boolean;
   onDownloadJSON: () => void;
-  fileInputRef: React.RefObject<HTMLInputElement>;
+  fileInputRef: RefObject<HTMLInputElement | null>;
   onLoadJSON: (event: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
@@ -43,7 +43,7 @@ export default function Sidebar({ items,
         <button onClick={onToggleDrag}>
           {dragEnabled ? 'Lock Editor' : 'Unlock Editor'}
         </button>
-        <button onClick={onDownloadJSON}>Download JSON</button>
+        <button onClick={onDownloadJSON}>Export Layout</button>
         <input
           ref={fileInputRef}
           type="file"
@@ -52,7 +52,7 @@ export default function Sidebar({ items,
           onChange={onLoadJSON}
         />
         <button onClick={() => fileInputRef.current?.click()}>
-          Load JSON
+          Import Layout
         </button>
       </div>
     </div>
