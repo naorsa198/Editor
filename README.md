@@ -74,4 +74,4 @@ The project uses ESLint for code quality. Configuration extends:
   - Safari
 
 
-[![Screenshot](images/screenshot.png)](https://github.com/naorsa198/Editor/blob/master/Images/editor.png)
+![Image](https://github.com/user-attachments/assets/8a2fdb8d-493f-4407-a9ff-23c7c6f764e7)
