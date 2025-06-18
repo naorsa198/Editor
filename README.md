@@ -72,3 +72,6 @@ The project uses ESLint for code quality. Configuration extends:
   - Chrome
   - Firefox
   - Safari
+
+
+![Screenshot](images/screenshot.png)
