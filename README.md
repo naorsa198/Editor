@@ -61,37 +61,14 @@ src/
 └── setupTests.ts  # Test configuration
 ```
 
-## 🧪 Testing
-
-The project uses Jest and React Testing Library for testing. Run tests using:
-
-```bash
-yarn test
-```
-
 ## 📝 ESLint Configuration
 
 The project uses ESLint for code quality. Configuration extends:
 - react-app
 - react-app/jest
 
-## 🌐 Browser Support
-
-### Production
-- Browser market share > 0.2%
-- Not dead
-- No Opera Mini
-
-### Development
+## 🌐 Browser Suppor
 - Latest versions of:
   - Chrome
   - Firefox
   - Safari
-
-## 📄 License
-
-This project is private and proprietary.
-
-## 🤝 Contributing
-
-This is a private project. Contact the project maintainers for contribution guidelines.
