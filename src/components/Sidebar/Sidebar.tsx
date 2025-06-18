@@ -1,5 +1,5 @@
 // Sidebar.tsx
-import ToolboxItem from '../../ToolboxItem/ToolboxItem';
+import ToolboxItem from '../ToolboxItem/ToolboxItem';
 import './Sidebar.css';
 import { RefObject } from 'react';
 

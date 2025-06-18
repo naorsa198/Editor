@@ -33,6 +33,9 @@ type ItemData = {
     src?: string;
 };
 
+const elementTypes: ElementType[] = ['text', 'button', 'image', 'input'];
+
+
 export default function Editor() {
     const [activeType, setActiveType] = useState<string | any>(null);
     const [activeItem, setActiveItem] = useState<{ id: string, text?: string, src?: string } | null>(null);
@@ -52,7 +55,6 @@ export default function Editor() {
     const menuRef = useRef<any>(null);
     const fileInputRef = useRef<HTMLInputElement>(null);
 
-    const elementTypes: ElementType[] = ['text', 'button', 'image', 'input'];
 
     function isElementType(value: any): value is ElementType {
         return elementTypes.includes(value);
@@ -282,7 +284,6 @@ export default function Editor() {
         setRightElementClicked('')
     }
 
-    // Save (Download) JSON handler
     const handleDownloadJSON = () => {
         const name = prompt("Enter file name:", "canvas-items.json");
         if (!name) return;
@@ -296,7 +297,6 @@ export default function Editor() {
         URL.revokeObjectURL(url);
     };
 
-    // Load JSON handler
     const handleLoadJSON = (e: React.ChangeEvent<HTMLInputElement>) => {
         const file = e.target.files?.[0];
         if (!file) return;
@@ -426,7 +426,7 @@ export default function Editor() {
                     <Viewer viewerItems={itemsInCanvas}></Viewer>
                 </div>
             </div>
-            <DragOverlay dropAnimation={null}>
+            <DragOverlay>
                 {activeType ? <DragOverlayWrapper type={activeType} data={activeItem} /> : null}
             </DragOverlay>
             {menuPosition && (

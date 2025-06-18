@@ -11,10 +11,6 @@ export function getDraggedElement(
     props: {
         id: string;
         data?: { text?: string; src?: string } | null;
-        onTextChange?: (id: string, text: string) => void;
-        onImageChange?: (id: string, src: string) => void;
-        onFocus?: () => void;
-        onBlur?: () => void;
     }
 ) {
     const defaultImageUrl = 'https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg';
@@ -25,9 +21,6 @@ export function getDraggedElement(
                 <textarea
                     className="dragoverlay-textarea"
                     value={props.data?.text || ''}
-                    onFocus={props.onFocus}
-                    onBlur={props.onBlur}
-                    onChange={e => props.onTextChange?.(props.id, e.target.value)}
                     placeholder="Write here..."
                 />
             );
@@ -42,24 +35,6 @@ export function getDraggedElement(
                     <div className="dragoverlay-image-label">
                         {props.data?.src ? "" : 'Drag to upload'}
                     </div>
-                    {props.onImageChange && (
-                        <input
-                            type="file"
-                            accept="image/*"
-                            onPointerDown={e => {
-                                e.stopPropagation();
-                                e.preventDefault();
-                            }}
-                            onChange={e => {
-                                const file = e.target.files?.[0];
-                                if (file) {
-                                    const reader = new FileReader();
-                                    reader.onload = ev => props.onImageChange?.(props.id, ev.target?.result as string);
-                                    reader.readAsDataURL(file);
-                                }
-                            }}
-                        />
-                    )}
                 </div>
             );
         case 'input':
